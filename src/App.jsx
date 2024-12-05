@@ -1,6 +1,8 @@
 import React from 'react'
 import Bookshelf from './Bookshelf'
 
+import './App.css'
+
 const App = () => {
   return (
     <>

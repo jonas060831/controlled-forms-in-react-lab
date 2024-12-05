@@ -72,7 +72,23 @@ const Bookshelf = () => {
             </form>
 
         </div>
-        <div className="bookCardsDiv">{/* Book cards will display here */}</div>
+        <div className="bookCardsDiv">
+            {/* Book cards will display here */}
+
+            {
+                books.map( (book, index) => (
+                    <div
+                     className="bookCard"
+                     key={index}
+                    >
+                        <h3>{book.title}</h3>
+
+                        by &nbsp;
+                        {book.author}
+                    </div>
+                ))
+            }
+        </div>
     </div>
   )
 }
