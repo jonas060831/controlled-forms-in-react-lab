@@ -12,7 +12,21 @@ const Bookshelf = () => {
     author: ''
   })
 
-  
+  const handleInputChange = (event) => {
+    //coz even without the form yet we know that
+    //event will eventually have an input with some name hence we can
+    //call event.target.name which is equivalent to some input with a name
+    // and its value event.target.value also equates to input with value property
+
+    const newBook = { [event.target.name]: event.target.value }
+
+    setNewBook(newBook)
+
+  }
+
+  const handleSubmit = () => {
+    
+  }
       
   return (
     <div className="bookshelfDiv">
