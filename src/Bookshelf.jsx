@@ -18,9 +18,10 @@ const Bookshelf = () => {
     //call event.target.name which is equivalent to some input with a name
     // and its value event.target.value also equates to input with value property
 
-    const newBook = { [event.target.name]: event.target.value }
-
-    setNewBook(newBook)
+    //needs to access previous value so i updated the code to this
+    setNewBook(prevValue => {
+        return {...prevValue, [event.target.name]: event.target.value }
+    })
 
   }
 
@@ -45,6 +46,29 @@ const Bookshelf = () => {
         <div className="formDiv">
             <h3>Add a Book</h3>
             {/* Form will go here */}
+
+            <form onSubmit={handleSubmit}>
+
+                <label htmlFor="title">Title:</label>
+                <input
+                 type="text"
+                 name="title"
+                 value={newBook.title}
+                 onChange={handleInputChange}
+                />
+                
+                <label htmlFor="author">Author:</label>
+                <input
+                 type="text"
+                 name="author"
+                 value={newBook.author}
+                 onChange={handleInputChange}
+                />
+
+                <button type="submit">Add Book</button>
+
+            </form>
+
         </div>
         <div className="bookCardsDiv">{/* Book cards will display here */}</div>
     </div>
