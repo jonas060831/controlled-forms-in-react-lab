@@ -33,6 +33,8 @@ const Bookshelf = () => {
 
     //submit the form
     const updateBooks = [...books, newBook]
+    //forgot to update the state
+    setBooks(updateBooks)
 
     //then reset ui
     setNewBook({ title: '', author: ''})
