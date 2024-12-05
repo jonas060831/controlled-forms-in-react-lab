@@ -24,8 +24,18 @@ const Bookshelf = () => {
 
   }
 
-  const handleSubmit = () => {
-    
+  const handleSubmit = (event) => {
+    //This function manages the submission of the form,
+    //adding a new book to the list and resetting the input fields.
+
+    //prevent reload
+    event.preventDefault()
+
+    //submit the form
+    const updateBooks = [...books, newBook]
+
+    //then reset ui
+    setNewBook({ title: '', author: ''})
   }
       
   return (
