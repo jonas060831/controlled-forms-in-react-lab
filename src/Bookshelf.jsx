@@ -51,6 +51,7 @@ const Bookshelf = () => {
 
                 <label htmlFor="title">Title:</label>
                 <input
+                 id='title'
                  type="text"
                  name="title"
                  value={newBook.title}
@@ -59,6 +60,7 @@ const Bookshelf = () => {
                 
                 <label htmlFor="author">Author:</label>
                 <input
+                 id='author'
                  type="text"
                  name="author"
                  value={newBook.author}
